@@ -19,7 +19,7 @@ return new class extends Migration
 
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_type_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('client_type_id')->constrained()->onUpdate('cascade');
             $table->string('name');
             $table->longText('description');
             $table->timestamps();
