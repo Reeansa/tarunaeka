@@ -40,14 +40,11 @@
                                 </td>
                                 <td>
                                     <div class="d-flex align-items-center gap-2">
-                                        <x-administrator.action navigate="{{ route('service.edit', $service->id) }}"
-                                            linkType="success">Edit</x-administrator.action>
-                                        <form action="{{ route('service.destroy', $service->id) }}" method="POST"
-                                            class="d-inline">
+                                        <x-administrator.action navigate="{{ route('service.edit', $service->id) }}" linkType="success">Edit</x-administrator.action>
+                                        <form action="{{ route('service.destroy', $service->id) }}" method="post" class="d-inline">
                                             @csrf
                                             @method('DELETE')
-                                            <x-administrator.button type="submit"
-                                                btnType="danger">Delete</x-administrator.button>
+                                            <x-administrator.button type="submit" btnType="danger">Delete</x-administrator.button>
                                         </form>
                                     </div>
                                 </td>
@@ -55,7 +52,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="5" class="text-center">Data tidak ditemukan</td>
+                            <td colspan="6" class="text-center">Data tidak ditemukan</td>
                         </tr>
                     @endif
                 </tbody>
